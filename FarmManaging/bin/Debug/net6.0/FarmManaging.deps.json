@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "FarmManaging/1.0.0": {
+        "dependencies": {
+          "FarmManaging.Model": "1.0.0"
+        },
+        "runtime": {
+          "FarmManaging.dll": {}
+        }
+      },
+      "FarmManaging.Model/1.0.0": {
+        "runtime": {
+          "FarmManaging.Model.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "FarmManaging/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "FarmManaging.Model/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
