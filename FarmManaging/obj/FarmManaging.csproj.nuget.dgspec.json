@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Programming\\Collage Practices\\FarmManager\\FarmManaging\\FarmManaging.csproj": {}
+    "E:\\Programming\\Collage Practices\\FarmManagerClone\\FarmManaging\\FarmManaging.csproj": {}
   },
   "projects": {
-    "E:\\Programming\\Collage Practices\\FarmManager\\FarmManaging.Model\\FarmManaging.Model.csproj": {
+    "E:\\Programming\\Collage Practices\\FarmManagerClone\\FarmManaging.Model\\FarmManaging.Model.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Programming\\Collage Practices\\FarmManager\\FarmManaging.Model\\FarmManaging.Model.csproj",
+        "projectUniqueName": "E:\\Programming\\Collage Practices\\FarmManagerClone\\FarmManaging.Model\\FarmManaging.Model.csproj",
         "projectName": "FarmManaging.Model",
-        "projectPath": "E:\\Programming\\Collage Practices\\FarmManager\\FarmManaging.Model\\FarmManaging.Model.csproj",
+        "projectPath": "E:\\Programming\\Collage Practices\\FarmManagerClone\\FarmManaging.Model\\FarmManaging.Model.csproj",
         "packagesPath": "C:\\Users\\MA\\.nuget\\packages\\",
-        "outputPath": "E:\\Programming\\Collage Practices\\FarmManager\\FarmManaging.Model\\obj\\",
+        "outputPath": "E:\\Programming\\Collage Practices\\FarmManagerClone\\FarmManaging.Model\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\DevExpress 21.2\\Components\\Offline Packages"
@@ -63,14 +63,14 @@
         }
       }
     },
-    "E:\\Programming\\Collage Practices\\FarmManager\\FarmManaging\\FarmManaging.csproj": {
+    "E:\\Programming\\Collage Practices\\FarmManagerClone\\FarmManaging\\FarmManaging.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Programming\\Collage Practices\\FarmManager\\FarmManaging\\FarmManaging.csproj",
+        "projectUniqueName": "E:\\Programming\\Collage Practices\\FarmManagerClone\\FarmManaging\\FarmManaging.csproj",
         "projectName": "FarmManaging",
-        "projectPath": "E:\\Programming\\Collage Practices\\FarmManager\\FarmManaging\\FarmManaging.csproj",
+        "projectPath": "E:\\Programming\\Collage Practices\\FarmManagerClone\\FarmManaging\\FarmManaging.csproj",
         "packagesPath": "C:\\Users\\MA\\.nuget\\packages\\",
-        "outputPath": "E:\\Programming\\Collage Practices\\FarmManager\\FarmManaging\\obj\\",
+        "outputPath": "E:\\Programming\\Collage Practices\\FarmManagerClone\\FarmManaging\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\DevExpress 21.2\\Components\\Offline Packages"
@@ -92,8 +92,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "E:\\Programming\\Collage Practices\\FarmManager\\FarmManaging.Model\\FarmManaging.Model.csproj": {
-                "projectPath": "E:\\Programming\\Collage Practices\\FarmManager\\FarmManaging.Model\\FarmManaging.Model.csproj"
+              "E:\\Programming\\Collage Practices\\FarmManagerClone\\FarmManaging.Model\\FarmManaging.Model.csproj": {
+                "projectPath": "E:\\Programming\\Collage Practices\\FarmManagerClone\\FarmManaging.Model\\FarmManaging.Model.csproj"
               }
             }
           }

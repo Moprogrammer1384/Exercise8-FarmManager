@@ -119,7 +119,7 @@ namespace FarmManaging.Model.Classes
 
         public decimal DailyProfit(Animal Animal)
         {
-            return DailyIncome(Animal) - DailyCost(Animal);
+            return (DailyIncome(Animal) + MeatProfit(Animal))- DailyCost(Animal);
         }
 
         public List<(int, string, string, int, bool, decimal)> DailyProfit()
@@ -169,7 +169,7 @@ namespace FarmManaging.Model.Classes
             decimal TotalIncome = 0;
             for (int i = 0; i < RemainLife; i++)
             {
-                TotalIncome += DailyIncome(Animal) * 365;
+                TotalIncome += (DailyIncome(Animal) * 365) + MeatProfit(Animal);
                 Animal.Products.ForEach(Product => Product.DailyProduce -= 0.05 * Product.DailyProduce);                
             }
             int j = 0;
@@ -239,7 +239,7 @@ namespace FarmManaging.Model.Classes
             {
                 if (Age < Animal.MaxAge)
                 {
-                    TotalIncome += DailyIncome(Animal) * 365;
+                    TotalIncome += (DailyIncome(Animal) * 365) + MeatProfit(Animal);
                     Animal.Products.ForEach(Product => Product.DailyProduce -= 0.05 * Product.DailyProduce);
                     Age++;
                 }

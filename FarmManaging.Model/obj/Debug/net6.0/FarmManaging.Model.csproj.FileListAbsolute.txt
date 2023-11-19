@@ -10,3 +10,15 @@ E:\Programming\Collage Practices\FarmManager\FarmManaging.Model\bin\Debug\net6.0
 E:\Programming\Collage Practices\FarmManager\FarmManaging.Model\obj\Debug\net6.0\FarmManaging.Model.dll
 E:\Programming\Collage Practices\FarmManager\FarmManaging.Model\obj\Debug\net6.0\ref\FarmManaging.Model.dll
 E:\Programming\Collage Practices\FarmManager\FarmManaging.Model\obj\Debug\net6.0\FarmManaging.Model.pdb
+E:\Programming\Collage Practices\FarmManagerClone\FarmManaging.Model\bin\Debug\net6.0\FarmManaging.Model.deps.json
+E:\Programming\Collage Practices\FarmManagerClone\FarmManaging.Model\bin\Debug\net6.0\FarmManaging.Model.dll
+E:\Programming\Collage Practices\FarmManagerClone\FarmManaging.Model\bin\Debug\net6.0\ref\FarmManaging.Model.dll
+E:\Programming\Collage Practices\FarmManagerClone\FarmManaging.Model\bin\Debug\net6.0\FarmManaging.Model.pdb
+E:\Programming\Collage Practices\FarmManagerClone\FarmManaging.Model\obj\Debug\net6.0\FarmManaging.Model.csproj.AssemblyReference.cache
+E:\Programming\Collage Practices\FarmManagerClone\FarmManaging.Model\obj\Debug\net6.0\FarmManaging.Model.GeneratedMSBuildEditorConfig.editorconfig
+E:\Programming\Collage Practices\FarmManagerClone\FarmManaging.Model\obj\Debug\net6.0\FarmManaging.Model.AssemblyInfoInputs.cache
+E:\Programming\Collage Practices\FarmManagerClone\FarmManaging.Model\obj\Debug\net6.0\FarmManaging.Model.AssemblyInfo.cs
+E:\Programming\Collage Practices\FarmManagerClone\FarmManaging.Model\obj\Debug\net6.0\FarmManaging.Model.csproj.CoreCompileInputs.cache
+E:\Programming\Collage Practices\FarmManagerClone\FarmManaging.Model\obj\Debug\net6.0\FarmManaging.Model.dll
+E:\Programming\Collage Practices\FarmManagerClone\FarmManaging.Model\obj\Debug\net6.0\ref\FarmManaging.Model.dll
+E:\Programming\Collage Practices\FarmManagerClone\FarmManaging.Model\obj\Debug\net6.0\FarmManaging.Model.pdb

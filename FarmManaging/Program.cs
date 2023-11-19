@@ -383,7 +383,7 @@ AnimalRepository.AddAnimal("Cow", "Domestic", Gender.Male, 5, 11, false,
                                    Name = "Meat",
                                    UnitOfMeasure = "Kg",
                                    Price = 300000,
-                                   DailyProduce = 450
+                                   DailyProduce = 500
                                }
                            },
                            new List<Cost>()
@@ -504,7 +504,7 @@ void LifeTimeProfit()
         Console.WriteLine($"Gender: {data.Gender}");
         Console.WriteLine($"Age: {data.Age}");
         Console.WriteLine($"IsSick: {data.IsSick}");
-        Console.WriteLine($"DailyProfit: {string.Format(CultureInfo.InvariantCulture, "{0:#,#.##}", data.LifeTimeProfit)}");
+        Console.WriteLine($"Life Time Profit: {string.Format(CultureInfo.InvariantCulture, "{0:#,#.##}", data.LifeTimeProfit)}");
         Console.WriteLine("---------------------------------------------------");
         Console.WriteLine("---------------------------------------------------");
     }
@@ -523,7 +523,7 @@ void PredictedProfit(int Year)
         Console.WriteLine($"Gender: {data.Gender}");
         Console.WriteLine($"Age: {data.Age}");
         Console.WriteLine($"IsSick: {data.IsSick}");
-        Console.WriteLine($"DailyProfit: {string.Format(CultureInfo.InvariantCulture, "{0:#,#.##}", data.PredictedProfit)}");
+        Console.WriteLine($"Predicted Profit: {string.Format(CultureInfo.InvariantCulture, "{0:#,#.##}", data.PredictedProfit)}");
         Console.WriteLine("---------------------------------------------------");
         Console.WriteLine("---------------------------------------------------");
     }
