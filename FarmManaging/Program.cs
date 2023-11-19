@@ -423,16 +423,20 @@ void SelectOption()
     {
         Welcome();
         Console.Write("Please choose one of the options: ");
+        List<(int ID, string Name, string Gender, int Age, bool IsSick, decimal DailyProfit)> Datas;
         switch (Console.ReadLine())
         {
             case "1":
-                DailyProfit();
+                Datas = AnimalRepository.DailyProfit();
+                Print(Datas, "Daily Profit");
                 break;
             case "2":
-                MeatProfit();
+                Datas = AnimalRepository.MeatProfit();
+                Print(Datas, "Daily Profit");
                 break;
             case "3":
-                LifeTimeProfit();
+                Datas = AnimalRepository.LifeTimeProfit();
+                Print(Datas, "Daily Profit");
                 break;
             case "4":
                 Console.Write("Please enter a year: ");
@@ -442,7 +446,8 @@ void SelectOption()
                     Year = Convert.ToInt32(Input);
                 else
                     Console.WriteLine("Please enter a correct number!!!");
-                PredictedProfit(Year);
+                Datas = AnimalRepository.ProfitPredicting(Year);
+                Print(Datas, "Daily Profit");
                 break;
             default:
                 Console.WriteLine("!!Please enter a correct number!!");
@@ -453,84 +458,24 @@ void SelectOption()
 }
 
 
-
-void DailyProfit()
+void Print(List<(int ID, string Name, string Gender, int Age, bool IsSick, decimal Profit)> Datas, string ProfitType)
 {
-    List<(int ID, string Name, string Gender, int Age, bool IsSick, decimal DailyProfit)> Datas = AnimalRepository.DailyProfit();
     decimal FarmTotalProfit = 0;
+
     foreach (var data in Datas)
     {
-        FarmTotalProfit += data.DailyProfit;
+        FarmTotalProfit += data.Profit;
         Console.WriteLine($"ID: {data.ID}");
         Console.WriteLine($"Name: {data.Name}");
         Console.WriteLine($"Gender: {data.Gender}");
         Console.WriteLine($"Age: {data.Age}");
         Console.WriteLine($"IsSick: {data.IsSick}");
-        Console.WriteLine($"DailyProfit: {string.Format(CultureInfo.InvariantCulture, "{0:#,#.##}", data.DailyProfit)}");
+        Console.WriteLine($"{ProfitType}: {string.Format(CultureInfo.InvariantCulture, "{0:#,#.##}", data.Profit)}");
         Console.WriteLine("---------------------------------------------------");
         Console.WriteLine("---------------------------------------------------");
     }
     Console.WriteLine($"Total Profit: {string.Format(CultureInfo.InvariantCulture, "{0:#,#.##}", FarmTotalProfit)}");
 }
-
-void MeatProfit()
-{
-    List<(int ID, string Name, string Gender, int Age, bool IsSick, decimal MeatProfit)> Datas = AnimalRepository.MeatProfit();
-    decimal FarmTotalProfit = 0;
-    foreach (var data in Datas)
-    {
-        FarmTotalProfit += data.MeatProfit;
-        Console.WriteLine($"ID: {data.ID}");
-        Console.WriteLine($"Name: {data.Name}");
-        Console.WriteLine($"Gender: {data.Gender}");
-        Console.WriteLine($"Age: {data.Age}");
-        Console.WriteLine($"IsSick: {data.IsSick}");
-        Console.WriteLine($"Meat Profit: {string.Format(CultureInfo.InvariantCulture, "{0:#,#.##}", data.MeatProfit)}");
-        Console.WriteLine("---------------------------------------------------");
-        Console.WriteLine("---------------------------------------------------");
-    }
-    Console.WriteLine($"Total Profit: {string.Format(CultureInfo.InvariantCulture, "{0:#,#.##}", FarmTotalProfit)}");
-}
-
-void LifeTimeProfit()
-{
-    List<(int ID, string Name, string Gender, int Age, bool IsSick, decimal LifeTimeProfit)> Datas = AnimalRepository.LifeTimeProfit();
-    decimal FarmTotalProfit = 0;
-    foreach (var data in Datas)
-    {
-        FarmTotalProfit += data.LifeTimeProfit;
-        Console.WriteLine($"ID: {data.ID}");
-        Console.WriteLine($"Name: {data.Name}");
-        Console.WriteLine($"Gender: {data.Gender}");
-        Console.WriteLine($"Age: {data.Age}");
-        Console.WriteLine($"IsSick: {data.IsSick}");
-        Console.WriteLine($"Life Time Profit: {string.Format(CultureInfo.InvariantCulture, "{0:#,#.##}", data.LifeTimeProfit)}");
-        Console.WriteLine("---------------------------------------------------");
-        Console.WriteLine("---------------------------------------------------");
-    }
-    Console.WriteLine($"Total Profit: {string.Format(CultureInfo.InvariantCulture, "{0:#,#.##}", FarmTotalProfit)}");
-}
-
-void PredictedProfit(int Year)
-{
-    List<(int ID, string Name, string Gender, int Age, bool IsSick, decimal PredictedProfit)> Datas = AnimalRepository.ProfitPredicting(Year);
-    decimal FarmTotalProfit = 0;
-    foreach (var data in Datas)
-    {
-        FarmTotalProfit += data.PredictedProfit;
-        Console.WriteLine($"ID: {data.ID}");
-        Console.WriteLine($"Name: {data.Name}");
-        Console.WriteLine($"Gender: {data.Gender}");
-        Console.WriteLine($"Age: {data.Age}");
-        Console.WriteLine($"IsSick: {data.IsSick}");
-        Console.WriteLine($"Predicted Profit: {string.Format(CultureInfo.InvariantCulture, "{0:#,#.##}", data.PredictedProfit)}");
-        Console.WriteLine("---------------------------------------------------");
-        Console.WriteLine("---------------------------------------------------");
-    }
-    Console.WriteLine($"Total Profit: {string.Format(CultureInfo.InvariantCulture, "{0:#,#.##}", FarmTotalProfit)}");
-}
-
-
 //void Add()
 //{
 //    Console.Write("How many animals do you want to add??");
