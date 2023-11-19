@@ -119,7 +119,7 @@ namespace FarmManaging.Model.Classes
 
         public decimal DailyProfit(Animal Animal)
         {
-            return (DailyIncome(Animal) + MeatProfit(Animal))- DailyCost(Animal);
+            return (DailyIncome(Animal) + MeatProfit(Animal)) - DailyCost(Animal);
         }
 
         public List<(int, string, string, int, bool, decimal)> DailyProfit()
@@ -159,7 +159,8 @@ namespace FarmManaging.Model.Classes
 
         public decimal LifeTimeIncome(Animal Animal)
         {
-            int RemainLife = Animal.MaxAge - Animal.Age;           
+            int RemainLife = Animal.MaxAge - Animal.Age;
+            int Age = Animal.Age;
             List<double> DailyProduces = new List<double>();
             foreach(Product Product in Animal.Products)
             {
@@ -167,11 +168,26 @@ namespace FarmManaging.Model.Classes
             }
 
             decimal TotalIncome = 0;
+            if(Animal.IsSick)
+                Animal.Products.ForEach(Product => Product.DailyProduce -= 0.4 * Product.DailyProduce);
             for (int i = 0; i < RemainLife; i++)
             {
-                TotalIncome += (DailyIncome(Animal) * 365) + MeatProfit(Animal);
-                Animal.Products.ForEach(Product => Product.DailyProduce -= 0.05 * Product.DailyProduce);                
+                TotalIncome += (DailyIncome(Animal) * 365);
+                switch(Animal.MaxAge - Age)
+                {
+                    case int difference when difference >= 4 && difference <= 6:
+                        Animal.Products.ForEach(Product => Product.DailyProduce -= 0.2 * Product.DailyProduce);
+                        break;
+                    case int difference when difference >= 2 && difference < 4:
+                        Animal.Products.ForEach(Product => Product.DailyProduce -= 0.3 * Product.DailyProduce);
+                        break;
+                    case int difference when difference < 2:
+                        Animal.Products.ForEach(Product => Product.DailyProduce -= 0.5 * Product.DailyProduce);
+                        break;
+                }                
+                Age++;
             }
+            TotalIncome += MeatProfit(Animal);
             int j = 0;
             foreach (Product Product in Animal.Products)
             {
@@ -183,7 +199,8 @@ namespace FarmManaging.Model.Classes
 
         public decimal LifeTimeCost(Animal Animal)
         {
-            int RemainLife = Animal.MaxAge - Animal.Age;            
+            int RemainLife = Animal.MaxAge - Animal.Age;
+            int Age = Animal.Age;
             List<double> DailyUsages = new List<double>();
             foreach (Cost Cost in Animal.Costs)
             {
@@ -193,7 +210,19 @@ namespace FarmManaging.Model.Classes
             for (int i = 0; i < RemainLife; i++)
             {
                 TotalCost += DailyCost(Animal) * 365;
-                Animal.Costs.ForEach(Cost => Cost.DailyUsage -= 0.05 * Cost.DailyUsage);               
+                switch (Animal.MaxAge - Age)
+                {
+                    case int difference when difference >= 4 && difference <= 6:
+                        Animal.Costs.ForEach(Product => Product.DailyUsage += 0.1 * Product.DailyUsage);
+                        break;
+                    case int difference when difference >= 2 && difference < 4:
+                        Animal.Costs.ForEach(Product => Product.DailyUsage += 0.2 * Product.DailyUsage);
+                        break;
+                    case int difference when difference < 2:
+                        Animal.Costs.ForEach(Product => Product.DailyUsage += 0.3 * Product.DailyUsage);
+                        break;
+                }
+                Age++;
             }
             int j = 0;
             foreach (Cost Cost in Animal.Costs)
@@ -235,17 +264,32 @@ namespace FarmManaging.Model.Classes
             {
                 DailyProduces.Add(Product.DailyProduce);
             }
+            if(Animal.IsSick)
+                Animal.Products.ForEach(Product => Product.DailyProduce -= 0.4 * Product.DailyProduce);
+
             for (int i = 0; i < Year; i++)
             {
                 if (Age < Animal.MaxAge)
                 {
-                    TotalIncome += (DailyIncome(Animal) * 365) + MeatProfit(Animal);
-                    Animal.Products.ForEach(Product => Product.DailyProduce -= 0.05 * Product.DailyProduce);
+                    TotalIncome += (DailyIncome(Animal) * 365);
+                    switch (Animal.MaxAge - Age)
+                    {
+                        case int difference when difference >= 4 && difference <= 6:
+                            Animal.Products.ForEach(Product => Product.DailyProduce -= 0.2 * Product.DailyProduce);
+                            break;
+                        case int difference when difference >= 2 && difference < 4:
+                            Animal.Products.ForEach(Product => Product.DailyProduce -= 0.3 * Product.DailyProduce);
+                            break;
+                        case int difference when difference < 2:
+                            Animal.Products.ForEach(Product => Product.DailyProduce -= 0.5 * Product.DailyProduce);
+                            break;
+                    }
                     Age++;
                 }
                 else
                     break;
             }
+            TotalIncome += MeatProfit(Animal);
             int j = 0;
             foreach (Product Product in Animal.Products)
             {
@@ -269,7 +313,18 @@ namespace FarmManaging.Model.Classes
                 if (Age < Animal.MaxAge)
                 {
                     TotalCost += DailyCost(Animal) * 365;
-                    Animal.Costs.ForEach(Cost => Cost.DailyUsage -= 0.05 * Cost.DailyUsage);
+                    switch (Animal.MaxAge - Age)
+                    {
+                        case int difference when difference >= 4 && difference <= 6:
+                            Animal.Costs.ForEach(Product => Product.DailyUsage += 0.1 * Product.DailyUsage);
+                            break;
+                        case int difference when difference >= 2 && difference < 4:
+                            Animal.Costs.ForEach(Product => Product.DailyUsage += 0.2 * Product.DailyUsage);
+                            break;
+                        case int difference when difference < 2:
+                            Animal.Costs.ForEach(Product => Product.DailyUsage += 0.3 * Product.DailyUsage);
+                            break;
+                    }
                     Age++;
                 }
                 else

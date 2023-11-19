@@ -4,7 +4,7 @@ using System.Globalization;
 
 AnimalRepository AnimalRepository = new AnimalRepository();
 
-AnimalRepository.AddAnimal("Cow", "Domestic", Gender.Male, 8, 10, false, 
+AnimalRepository.AddAnimal("Cow", "Domestic", Gender.Male, 8, 10, true, 
                            new List<Product>()
                            {
                                new Product()
@@ -432,11 +432,11 @@ void SelectOption()
                 break;
             case "2":
                 Datas = AnimalRepository.MeatProfit();
-                Print(Datas, "Daily Profit");
+                Print(Datas, "Meat Profit");
                 break;
             case "3":
                 Datas = AnimalRepository.LifeTimeProfit();
-                Print(Datas, "Daily Profit");
+                Print(Datas, "Life Time Profit");
                 break;
             case "4":
                 Console.Write("Please enter a year: ");
@@ -447,7 +447,7 @@ void SelectOption()
                 else
                     Console.WriteLine("Please enter a correct number!!!");
                 Datas = AnimalRepository.ProfitPredicting(Year);
-                Print(Datas, "Daily Profit");
+                Print(Datas, "Predicted Profit");
                 break;
             default:
                 Console.WriteLine("!!Please enter a correct number!!");
