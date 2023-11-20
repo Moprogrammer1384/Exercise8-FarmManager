@@ -13,6 +13,10 @@ namespace FarmManaging.Model.Classes
     {
         private List<Animal> _animals = new List<Animal>();
 
+        private List<double> DailyProduces;
+
+        private List<double> DailyUsages;
+
         public List<Animal> GetAllAnimals()
         {
             if (CountCheck())
@@ -161,13 +165,9 @@ namespace FarmManaging.Model.Classes
         {
             int RemainLife = Animal.MaxAge - Animal.Age;
             int Age = Animal.Age;
-            List<double> DailyProduces = new List<double>();
-            foreach(Product Product in Animal.Products)
-            {
-                DailyProduces.Add(Product.DailyProduce);
-            }
-
             decimal TotalIncome = 0;
+
+            SetDailyProduces(Animal);  
             if(Animal.IsSick)
                 Animal.Products.ForEach(Product => Product.DailyProduce -= 0.4 * Product.DailyProduce);
             for (int i = 0; i < RemainLife; i++)
@@ -187,13 +187,8 @@ namespace FarmManaging.Model.Classes
                 }                
                 Age++;
             }
-            TotalIncome += MeatProfit(Animal);
-            int j = 0;
-            foreach (Product Product in Animal.Products)
-            {
-                Product.DailyProduce = DailyProduces[j];
-                j++;
-            }
+            TotalIncome += MeatProfit(Animal);            
+            ReturnDailyProduces(Animal);
             return TotalIncome;           
         }
 
@@ -201,12 +196,9 @@ namespace FarmManaging.Model.Classes
         {
             int RemainLife = Animal.MaxAge - Animal.Age;
             int Age = Animal.Age;
-            List<double> DailyUsages = new List<double>();
-            foreach (Cost Cost in Animal.Costs)
-            {
-                DailyUsages.Add(Cost.DailyUsage);
-            }
             decimal TotalCost = 0;
+
+            SetDailyUsages(Animal);            
             for (int i = 0; i < RemainLife; i++)
             {
                 TotalCost += DailyCost(Animal) * 365;
@@ -223,13 +215,9 @@ namespace FarmManaging.Model.Classes
                         break;
                 }
                 Age++;
-            }
-            int j = 0;
-            foreach (Cost Cost in Animal.Costs)
-            {
-                Cost.DailyUsage = DailyUsages[j];
-                j++;
-            }
+            }            
+            ReturnDailyUsages(Animal);
+
             return TotalCost;
         }
 
@@ -259,11 +247,9 @@ namespace FarmManaging.Model.Classes
         {
             int Age = Animal.Age;
             decimal TotalIncome = 0;
-            List<double> DailyProduces = new List<double>();
-            foreach (Product Product in Animal.Products)
-            {
-                DailyProduces.Add(Product.DailyProduce);
-            }
+
+            SetDailyProduces(Animal);
+
             if(Animal.IsSick)
                 Animal.Products.ForEach(Product => Product.DailyProduce -= 0.4 * Product.DailyProduce);
 
@@ -290,12 +276,7 @@ namespace FarmManaging.Model.Classes
                     break;
             }
             TotalIncome += MeatProfit(Animal);
-            int j = 0;
-            foreach (Product Product in Animal.Products)
-            {
-                Product.DailyProduce = DailyProduces[j];
-                j++;
-            }
+            ReturnDailyProduces(Animal);
             return TotalIncome;
         }
 
@@ -303,11 +284,7 @@ namespace FarmManaging.Model.Classes
         {
             int Age = Animal.Age;
             decimal TotalCost = 0;
-            List<double> DailyUsages = new List<double>();
-            foreach (Cost Cost in Animal.Costs)
-            {
-                DailyUsages.Add(Cost.DailyUsage);
-            }
+            SetDailyUsages(Animal);
             for (int i = 0; i < Year; i++)
             {
                 if (Age < Animal.MaxAge)
@@ -330,12 +307,7 @@ namespace FarmManaging.Model.Classes
                 else
                     break;
             }
-            int j = 0;
-            foreach (Cost Cost in Animal.Costs)
-            {
-                Cost.DailyUsage = DailyUsages[j];
-                j++;
-            }
+            ReturnDailyUsages(Animal);
             return TotalCost;
         }
 
@@ -374,5 +346,42 @@ namespace FarmManaging.Model.Classes
                 return false;
         }
 
+        private void SetDailyProduces(Animal Animal)
+        {
+            DailyProduces = new List<double>();
+            foreach (Product Product in Animal.Products)
+            {
+                DailyProduces.Add(Product.DailyProduce);
+            }
+        }
+
+        private void SetDailyUsages(Animal Animal)
+        {
+            DailyUsages = new List<double>();
+            foreach (Cost Cost in Animal.Costs)
+            {
+                DailyUsages.Add(Cost.DailyUsage);
+            }
+        }
+
+        private void ReturnDailyProduces(Animal Animal)
+        {
+            int i = 0;
+            foreach (Product Product in Animal.Products)
+            {
+                Product.DailyProduce = DailyProduces[i];
+                i++;
+            }
+        }
+
+        private void ReturnDailyUsages(Animal Animal)
+        {
+            int i = 0;
+            foreach (Cost Cost in Animal.Costs)
+            {
+                Cost.DailyUsage = DailyUsages[i];
+                i++;
+            }
+        }
     }
 }
