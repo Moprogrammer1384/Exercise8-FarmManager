@@ -28,38 +28,6 @@ namespace FarmManaging.Model.Interfaces
         public void EditAnimal(Animal Animal);
 
         public Animal Search(int ID);
-
-        public decimal DailyIncome(Animal Animal);
-
-        public decimal DailyCost(Animal Animal);
-
-        public decimal DailyProfit(Animal Animal);
-
-        public decimal MeatProfit(Animal Animal);
-
-        public decimal CalvesProfit(Animal Animal);
-
-        public List<(int, string, string, int, bool, decimal)> DailyProfit();
-
-        public List<(int, string, string, int, bool, decimal)> MeatProfit();
-
-        public List<(int, string, string, int, bool, decimal)> CalvesProfit();
-
-        public decimal LifeTimeIncome(Animal Animal);
-
-        public decimal LifeTimeCost(Animal Animal);
-
-        public decimal LifeTimeProfit(Animal Animal);
-
-        public List<(int, string, string, int, bool, decimal)> LifeTimeProfit();
-
-        public decimal IncomePredicting(Animal Animal, int Year);
-
-        public decimal CostPredicting(Animal Animal, int Year);
-
-        public decimal ProfitPredicting(Animal Animal, int Year);
-
-        public List<(int, string, string, int, bool, decimal)> ProfitPredicting(int Year);
-
+        
     }
 }

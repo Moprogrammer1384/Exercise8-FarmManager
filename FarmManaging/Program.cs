@@ -3,6 +3,8 @@ using FarmManaging.Model.Interfaces;
 using System.Globalization;
 
 AnimalRepository AnimalRepository = new AnimalRepository();
+IncomeManager IncomeManager = new IncomeManager(AnimalRepository);
+ProfitManager ProfitManager = new ProfitManager(AnimalRepository, IncomeManager, new CostManager());
 
 AnimalRepository.AddAnimal("Cow", "Domestic", Gender.Male, 8, 10, true, 
                            new List<Product>()
@@ -442,31 +444,34 @@ void SelectOption()
         switch (Console.ReadLine())
         {
             case "1":
-                Datas = AnimalRepository.DailyProfit();
+                Datas = ProfitManager.DailyProfit();
                 Print(Datas, "Daily Profit");
                 break;
             case "2":
-                Datas = AnimalRepository.MeatProfit();
+                Datas = IncomeManager.MeatIncome();
                 Print(Datas, "Meat Profit");
                 break;
             case "3":
-                Datas = AnimalRepository.CalvesProfit();
+                Datas = IncomeManager.CalvesIncome();
                 Print(Datas, "Calves Profit");
                 break;
             case "4":
-                Datas = AnimalRepository.LifeTimeProfit();
+                Datas = ProfitManager.LifeTimeProfit();
                 Print(Datas, "Life Time Profit");
                 break;
             case "5":
                 Console.Write("Please enter a year: ");
                 string Input = Console.ReadLine();
                 int Year = 0;
-                if (IsInt(Input))
+                if (IsInt(Input) && IsNull(Input))
+                {
                     Year = Convert.ToInt32(Input);
+                    Datas = ProfitManager.ProfitPredicting(Year);
+                    Print(Datas, "Predicted Profit");
+                }                    
                 else
                     Console.WriteLine("Please enter a correct number!!!");
-                Datas = AnimalRepository.ProfitPredicting(Year);
-                Print(Datas, "Predicted Profit");
+                
                 break;
             default:
                 Console.WriteLine("!!Please enter a correct number!!");
@@ -496,9 +501,9 @@ void Print(List<(int ID, string Name, string Gender, int Age, bool IsSick, decim
     Console.WriteLine($"Total Profit: {string.Format(CultureInfo.InvariantCulture, "{0:#,#.##}", FarmTotalProfit)}");
 }
 
-bool IsInt(string input)
+bool IsInt(string Input)
 {
-    foreach (char c in input)
+    foreach (char c in Input)
     {
         if (!Char.IsDigit(c))
         {
@@ -506,6 +511,14 @@ bool IsInt(string input)
         }
     }
     return true;
+}
+
+bool IsNull(string Input)
+{
+    if (Input.Trim() == "")
+        return false;
+    else
+        return true;
 }
 
 SelectOption();
