@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "X0GXJkcIC57ApS5Du1N1tebEGe+vJYs/QmktEo3Q/E55+HACvJ22RoHhTP77A887Nwg7V7/HyUV3GCBUnjeuGg==",
+  "dgSpecHash": "Bx+ZXkNF4U+vgprSWy+Cdd4TuQUjmaOMjp+/ayYZTRM0picj90jt/V/7WA2ddtz9YrZv7S7/rsPNnfIw7Y06ow==",
   "success": true,
   "projectFilePath": "E:\\Programming\\Collage Practices\\FarmManagerClone\\FarmManaging\\FarmManaging.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\MA\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
+  ],
   "logs": []
 }

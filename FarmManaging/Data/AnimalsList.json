@@ -1,0 +1,426 @@
+[
+  {
+    "ID": 1,
+    "Name": "Cow",
+    "Type": "Domestic",
+    "Gender": 0,
+    "Age": 8,
+    "MaxAge": 10,
+    "IsSick": true,
+    "Products": [
+      {
+        "Name": "Calf",
+        "UnitOfMeasure": "Kg",
+        "Price": 300000.0,
+        "DailyProduce": 140.0
+      },
+      {
+        "Name": "Meat",
+        "UnitOfMeasure": "Kg",
+        "Price": 300000.0,
+        "DailyProduce": 400.0
+      }
+    ],
+    "Costs": [
+      {
+        "Name": "Grass",
+        "UnitOfMeasure": "Kg",
+        "Price": 10000.0,
+        "DailyUsage": 3.0
+      },
+      {
+        "Name": "Worker",
+        "UnitOfMeasure": "People",
+        "Price": 100000.0,
+        "DailyUsage": 2.0
+      }
+    ]
+  },
+  {
+    "ID": 2,
+    "Name": "Cow",
+    "Type": "Domestic",
+    "Gender": 1,
+    "Age": 2,
+    "MaxAge": 10,
+    "IsSick": false,
+    "Products": [
+      {
+        "Name": "Meat",
+        "UnitOfMeasure": "Kg",
+        "Price": 250000.0,
+        "DailyProduce": 250.0
+      },
+      {
+        "Name": "Milk",
+        "UnitOfMeasure": "Liter",
+        "Price": 20000.0,
+        "DailyProduce": 20.0
+      },
+      {
+        "Name": "Cheese",
+        "UnitOfMeasure": "Kg",
+        "Price": 400000.0,
+        "DailyProduce": 3.0
+      }
+    ],
+    "Costs": [
+      {
+        "Name": "Grass",
+        "UnitOfMeasure": "Kg",
+        "Price": 10000.0,
+        "DailyUsage": 3.0
+      },
+      {
+        "Name": "Worker",
+        "UnitOfMeasure": "People",
+        "Price": 100000.0,
+        "DailyUsage": 2.0
+      }
+    ]
+  },
+  {
+    "ID": 3,
+    "Name": "Cow",
+    "Type": "Domestic",
+    "Gender": 1,
+    "Age": 4,
+    "MaxAge": 15,
+    "IsSick": false,
+    "Products": [
+      {
+        "Name": "Meat",
+        "UnitOfMeasure": "Kg",
+        "Price": 250000.0,
+        "DailyProduce": 200.0
+      },
+      {
+        "Name": "Milk",
+        "UnitOfMeasure": "Liter",
+        "Price": 20000.0,
+        "DailyProduce": 20.0
+      },
+      {
+        "Name": "Cheese",
+        "UnitOfMeasure": "Kg",
+        "Price": 400000.0,
+        "DailyProduce": 3.0
+      }
+    ],
+    "Costs": [
+      {
+        "Name": "Grass",
+        "UnitOfMeasure": "Kg",
+        "Price": 10000.0,
+        "DailyUsage": 3.0
+      },
+      {
+        "Name": "Worker",
+        "UnitOfMeasure": "People",
+        "Price": 100000.0,
+        "DailyUsage": 2.0
+      }
+    ]
+  },
+  {
+    "ID": 4,
+    "Name": "Cow",
+    "Type": "Domestic",
+    "Gender": 0,
+    "Age": 6,
+    "MaxAge": 10,
+    "IsSick": true,
+    "Products": [
+      {
+        "Name": "Calf",
+        "UnitOfMeasure": "Kg",
+        "Price": 300000.0,
+        "DailyProduce": 210.0
+      },
+      {
+        "Name": "Meat",
+        "UnitOfMeasure": "Kg",
+        "Price": 300000.0,
+        "DailyProduce": 500.0
+      }
+    ],
+    "Costs": [
+      {
+        "Name": "Grass",
+        "UnitOfMeasure": "Kg",
+        "Price": 10000.0,
+        "DailyUsage": 3.0
+      },
+      {
+        "Name": "Worker",
+        "UnitOfMeasure": "People",
+        "Price": 100000.0,
+        "DailyUsage": 2.0
+      }
+    ]
+  },
+  {
+    "ID": 5,
+    "Name": "Cow",
+    "Type": "Domestic",
+    "Gender": 1,
+    "Age": 1,
+    "MaxAge": 12,
+    "IsSick": false,
+    "Products": [
+      {
+        "Name": "Meat",
+        "UnitOfMeasure": "Kg",
+        "Price": 200000.0,
+        "DailyProduce": 250.0
+      },
+      {
+        "Name": "Milk",
+        "UnitOfMeasure": "Liter",
+        "Price": 20000.0,
+        "DailyProduce": 20.0
+      },
+      {
+        "Name": "Cheese",
+        "UnitOfMeasure": "Kg",
+        "Price": 400000.0,
+        "DailyProduce": 3.0
+      }
+    ],
+    "Costs": [
+      {
+        "Name": "Grass",
+        "UnitOfMeasure": "Kg",
+        "Price": 10000.0,
+        "DailyUsage": 3.0
+      },
+      {
+        "Name": "Worker",
+        "UnitOfMeasure": "People",
+        "Price": 100000.0,
+        "DailyUsage": 2.0
+      }
+    ]
+  },
+  {
+    "ID": 6,
+    "Name": "Cow",
+    "Type": "Domestic",
+    "Gender": 0,
+    "Age": 5,
+    "MaxAge": 11,
+    "IsSick": false,
+    "Products": [
+      {
+        "Name": "Calf",
+        "UnitOfMeasure": "Kg",
+        "Price": 300000.0,
+        "DailyProduce": 140.0
+      },
+      {
+        "Name": "Meat",
+        "UnitOfMeasure": "Kg",
+        "Price": 300000.0,
+        "DailyProduce": 450.0
+      }
+    ],
+    "Costs": [
+      {
+        "Name": "Grass",
+        "UnitOfMeasure": "Kg",
+        "Price": 10000.0,
+        "DailyUsage": 3.0
+      },
+      {
+        "Name": "Worker",
+        "UnitOfMeasure": "People",
+        "Price": 100000.0,
+        "DailyUsage": 2.0
+      }
+    ]
+  },
+  {
+    "ID": 7,
+    "Name": "Cow",
+    "Type": "Domestic",
+    "Gender": 1,
+    "Age": 3,
+    "MaxAge": 10,
+    "IsSick": false,
+    "Products": [
+      {
+        "Name": "Meat",
+        "UnitOfMeasure": "Kg",
+        "Price": 250000.0,
+        "DailyProduce": 300.0
+      },
+      {
+        "Name": "Milk",
+        "UnitOfMeasure": "Liter",
+        "Price": 20000.0,
+        "DailyProduce": 20.0
+      },
+      {
+        "Name": "Cheese",
+        "UnitOfMeasure": "Kg",
+        "Price": 400000.0,
+        "DailyProduce": 3.0
+      },
+      {
+        "Name": "Butter",
+        "UnitOfMeasure": "gr",
+        "Price": 81000.0,
+        "DailyProduce": 800.0
+      }
+    ],
+    "Costs": [
+      {
+        "Name": "Grass",
+        "UnitOfMeasure": "Kg",
+        "Price": 10000.0,
+        "DailyUsage": 3.0
+      },
+      {
+        "Name": "Worker",
+        "UnitOfMeasure": "People",
+        "Price": 100000.0,
+        "DailyUsage": 3.0
+      }
+    ]
+  },
+  {
+    "ID": 8,
+    "Name": "Cow",
+    "Type": "Domestic",
+    "Gender": 1,
+    "Age": 3,
+    "MaxAge": 10,
+    "IsSick": false,
+    "Products": [
+      {
+        "Name": "Meat",
+        "UnitOfMeasure": "Kg",
+        "Price": 250000.0,
+        "DailyProduce": 150.0
+      },
+      {
+        "Name": "Milk",
+        "UnitOfMeasure": "Liter",
+        "Price": 20000.0,
+        "DailyProduce": 20.0
+      },
+      {
+        "Name": "Cheese",
+        "UnitOfMeasure": "Kg",
+        "Price": 400000.0,
+        "DailyProduce": 3.0
+      },
+      {
+        "Name": "Butter",
+        "UnitOfMeasure": "gr",
+        "Price": 81000.0,
+        "DailyProduce": 800.0
+      }
+    ],
+    "Costs": [
+      {
+        "Name": "Grass",
+        "UnitOfMeasure": "Kg",
+        "Price": 10000.0,
+        "DailyUsage": 3.0
+      },
+      {
+        "Name": "Worker",
+        "UnitOfMeasure": "People",
+        "Price": 100000.0,
+        "DailyUsage": 3.0
+      }
+    ]
+  },
+  {
+    "ID": 9,
+    "Name": "Cow",
+    "Type": "Domestic",
+    "Gender": 1,
+    "Age": 3,
+    "MaxAge": 10,
+    "IsSick": false,
+    "Products": [
+      {
+        "Name": "Meat",
+        "UnitOfMeasure": "Kg",
+        "Price": 250000.0,
+        "DailyProduce": 200.0
+      },
+      {
+        "Name": "Milk",
+        "UnitOfMeasure": "Liter",
+        "Price": 20000.0,
+        "DailyProduce": 20.0
+      },
+      {
+        "Name": "Cheese",
+        "UnitOfMeasure": "Kg",
+        "Price": 400000.0,
+        "DailyProduce": 3.0
+      },
+      {
+        "Name": "Butter",
+        "UnitOfMeasure": "gr",
+        "Price": 81000.0,
+        "DailyProduce": 800.0
+      }
+    ],
+    "Costs": [
+      {
+        "Name": "Grass",
+        "UnitOfMeasure": "Kg",
+        "Price": 10000.0,
+        "DailyUsage": 3.0
+      },
+      {
+        "Name": "Worker",
+        "UnitOfMeasure": "People",
+        "Price": 100000.0,
+        "DailyUsage": 3.0
+      }
+    ]
+  },
+  {
+    "ID": 10,
+    "Name": "Cow",
+    "Type": "Domestic",
+    "Gender": 0,
+    "Age": 5,
+    "MaxAge": 11,
+    "IsSick": false,
+    "Products": [
+      {
+        "Name": "Calf",
+        "UnitOfMeasure": "Kg",
+        "Price": 300000.0,
+        "DailyProduce": 210.0
+      },
+      {
+        "Name": "Meat",
+        "UnitOfMeasure": "Kg",
+        "Price": 300000.0,
+        "DailyProduce": 500.0
+      }
+    ],
+    "Costs": [
+      {
+        "Name": "Grass",
+        "UnitOfMeasure": "Kg",
+        "Price": 10000.0,
+        "DailyUsage": 3.0
+      },
+      {
+        "Name": "Worker",
+        "UnitOfMeasure": "People",
+        "Price": 100000.0,
+        "DailyUsage": 2.0
+      }
+    ]
+  }
+]

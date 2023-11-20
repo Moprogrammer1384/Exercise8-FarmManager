@@ -34,3 +34,4 @@ E:\Programming\Collage Practices\FarmManagerClone\FarmManaging\obj\Debug\net6.0\
 E:\Programming\Collage Practices\FarmManagerClone\FarmManaging\obj\Debug\net6.0\ref\FarmManaging.dll
 E:\Programming\Collage Practices\FarmManagerClone\FarmManaging\obj\Debug\net6.0\FarmManaging.pdb
 E:\Programming\Collage Practices\FarmManagerClone\FarmManaging\obj\Debug\net6.0\FarmManaging.genruntimeconfig.cache
+E:\Programming\Collage Practices\FarmManagerClone\FarmManaging\bin\Debug\net6.0\Newtonsoft.Json.dll
