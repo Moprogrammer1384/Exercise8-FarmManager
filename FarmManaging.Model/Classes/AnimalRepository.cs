@@ -101,7 +101,7 @@ namespace FarmManaging.Model.Classes
         {
             decimal TotalIncome = 0;
 
-            foreach (Product Product in Animal.Products.Where(p => p.Name != "Meat"))
+            foreach (Product Product in Animal.Products.Where(p => p.Name != "Meat" && p.Name != "Calf"))
             {
                 TotalIncome += Product.Price * (decimal)Product.DailyProduce;
             }
@@ -121,9 +121,21 @@ namespace FarmManaging.Model.Classes
             return MeatProfit;
         }
 
+        public decimal CalvesProfit(Animal Animal)
+        {
+            decimal CalvesProfit = 0;
+
+            foreach (Product Product in Animal.Products.Where(p => p.Name == "Calf"))
+            {
+                CalvesProfit += Product.Price * (decimal)Product.DailyProduce;
+            }
+
+            return CalvesProfit;
+        }
+
         public decimal DailyProfit(Animal Animal)
         {
-            return (DailyIncome(Animal) + MeatProfit(Animal)) - DailyCost(Animal);
+            return (DailyIncome(Animal)) - DailyCost(Animal);
         }
 
         public List<(int, string, string, int, bool, decimal)> DailyProfit()
@@ -161,6 +173,23 @@ namespace FarmManaging.Model.Classes
             return Data;
         }
 
+        public List<(int, string, string, int, bool, decimal)> CalvesProfit()
+        {
+            List<(int ID, string Name, string Gender, int Age, bool IsSick, decimal CalvesProfit)> Data =
+                new List<(int ID, string Name, string Gender, int Age, bool IsSick, decimal CalvesProfit)>();
+
+            (int ID, string Name, string Gender, int Age, bool IsSick, decimal CalvesProfit) CalvesProfits;
+
+            foreach (Animal Animal in _animals)
+            {
+                CalvesProfits = (Animal.ID, Animal.Name, Animal.Gender.ToString(), Animal.Age, Animal.IsSick, CalvesProfit(Animal));
+
+                Data.Add(CalvesProfits);
+            }
+
+            return Data;
+        }
+
         public decimal LifeTimeIncome(Animal Animal)
         {
             int RemainLife = Animal.MaxAge - Animal.Age;
@@ -172,7 +201,7 @@ namespace FarmManaging.Model.Classes
                 Animal.Products.ForEach(Product => Product.DailyProduce -= 0.4 * Product.DailyProduce);
             for (int i = 0; i < RemainLife; i++)
             {
-                TotalIncome += (DailyIncome(Animal) * 365);
+                TotalIncome += (DailyIncome(Animal) * 365) + (CalvesProfit(Animal) * 12);
                 switch(Animal.MaxAge - Age)
                 {
                     case int difference when difference >= 4 && difference <= 6:
@@ -257,7 +286,7 @@ namespace FarmManaging.Model.Classes
             {
                 if (Age < Animal.MaxAge)
                 {
-                    TotalIncome += (DailyIncome(Animal) * 365);
+                    TotalIncome += (DailyIncome(Animal) * 365) + (CalvesProfit(Animal) * 12);
                     switch (Animal.MaxAge - Age)
                     {
                         case int difference when difference >= 4 && difference <= 6:

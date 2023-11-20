@@ -12,7 +12,7 @@ AnimalRepository.AddAnimal("Cow", "Domestic", Gender.Male, 8, 10, true,
                                    Name = "Calf",
                                    UnitOfMeasure = "Kg",
                                    Price = 300000,
-                                   DailyProduce = 2
+                                   DailyProduce = 140
                                },
                                new Product()
                                {
@@ -131,7 +131,7 @@ AnimalRepository.AddAnimal("Cow", "Domestic", Gender.Male, 6, 10, true,
                                    Name = "Calf",
                                    UnitOfMeasure = "Kg",
                                    Price = 300000,
-                                   DailyProduce = 1
+                                   DailyProduce = 210
                                },
                                new Product()
                                {
@@ -202,7 +202,14 @@ AnimalRepository.AddAnimal("Cow", "Domestic", Gender.Female, 1, 12, false,
                            });
 AnimalRepository.AddAnimal("Cow", "Domestic", Gender.Male, 5, 11, false,
                            new List<Product>()
-                           {                               
+                           {
+                               new Product()
+                               {
+                                   Name = "Calf",
+                                   UnitOfMeasure = "Kg",
+                                   Price = 300000,
+                                   DailyProduce = 140
+                               },
                                new Product()
                                {
                                    Name = "Meat",
@@ -380,6 +387,13 @@ AnimalRepository.AddAnimal("Cow", "Domestic", Gender.Male, 5, 11, false,
                            {
                                new Product()
                                {
+                                   Name = "Calf",
+                                   UnitOfMeasure = "Kg",
+                                   Price = 300000,
+                                   DailyProduce = 210
+                               },
+                               new Product()
+                               {
                                    Name = "Meat",
                                    UnitOfMeasure = "Kg",
                                    Price = 300000,
@@ -409,8 +423,9 @@ void Welcome()
     string menu = @"
 1. Show daily profit of animals.
 2. Show meat profit of animals.
-3. Show life time profit of animals.
-4. Predit and show farm's profit in future  
+3. Show calves profit of animals.
+4. Show life time profit of animals.
+5. Predit and show farm's profit in future  
 ";
     Console.WriteLine("************************************");
     Console.WriteLine(menu);
@@ -423,7 +438,7 @@ void SelectOption()
     {
         Welcome();
         Console.Write("Please choose one of the options: ");
-        List<(int ID, string Name, string Gender, int Age, bool IsSick, decimal DailyProfit)> Datas;
+        List<(int ID, string Name, string Gender, int Age, bool IsSick, decimal Profit)> Datas;
         switch (Console.ReadLine())
         {
             case "1":
@@ -435,10 +450,14 @@ void SelectOption()
                 Print(Datas, "Meat Profit");
                 break;
             case "3":
+                Datas = AnimalRepository.CalvesProfit();
+                Print(Datas, "Calves Profit");
+                break;
+            case "4":
                 Datas = AnimalRepository.LifeTimeProfit();
                 Print(Datas, "Life Time Profit");
                 break;
-            case "4":
+            case "5":
                 Console.Write("Please enter a year: ");
                 string Input = Console.ReadLine();
                 int Year = 0;

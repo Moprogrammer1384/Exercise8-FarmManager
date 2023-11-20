@@ -37,9 +37,13 @@ namespace FarmManaging.Model.Interfaces
 
         public decimal MeatProfit(Animal Animal);
 
+        public decimal CalvesProfit(Animal Animal);
+
         public List<(int, string, string, int, bool, decimal)> DailyProfit();
 
         public List<(int, string, string, int, bool, decimal)> MeatProfit();
+
+        public List<(int, string, string, int, bool, decimal)> CalvesProfit();
 
         public decimal LifeTimeIncome(Animal Animal);
 
