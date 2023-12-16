@@ -9,13 +9,13 @@ namespace FarmManaging.Model.Classes
 {
     public class ProfitManager : IProfitManager
     {
-        private IncomeManager _incomeManager;
+        private readonly IIncomeManager _incomeManager;
 
-        private CostManager _costManager;
+        private readonly ICostManager _costManager;
 
-        private AnimalRepository _animalRepository;
+        private readonly IAnimalRepository _animalRepository;
 
-        public ProfitManager(AnimalRepository animalRepository, IncomeManager incomeManager, CostManager costManager)
+        public ProfitManager(IAnimalRepository animalRepository, IIncomeManager incomeManager, ICostManager costManager)
         {
             _animalRepository = animalRepository;
             _incomeManager = incomeManager;

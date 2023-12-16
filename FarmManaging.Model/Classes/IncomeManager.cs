@@ -11,9 +11,9 @@ namespace FarmManaging.Model.Classes
     {
         private List<double> DailyProduces;
 
-        private AnimalRepository _animalRepository;
+        private readonly IAnimalRepository _animalRepository;
 
-        public IncomeManager(AnimalRepository animalRepository)
+        public IncomeManager(IAnimalRepository animalRepository)
         {
             _animalRepository = animalRepository;
         }
